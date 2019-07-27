@@ -9,12 +9,15 @@ export default class App extends Component {
     users: [],
     loading: false
   };
-  async componentDidMount() {
+  componentDidMount() {
     this.setState({loading: true});
-
+    this.getUsers();
+    setInterval(this.getUsers, 1500);
+  };
+  getUsers = async () =>  {
     const res = await axios.get("https://api.github.com/users");
     this.setState({users: res.data, loading: false});
-  }
+  };
   render() {
     const {users, loading} = this.state;
     return (
@@ -23,7 +26,7 @@ export default class App extends Component {
         <Users loading={loading} users={users}/>
       </div>
     );
-  }
+  };
 }
 
 
