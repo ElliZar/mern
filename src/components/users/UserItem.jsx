@@ -15,10 +15,10 @@ const UserItem = ({user}) => {
         </div>
     </div>
   )
-}
+};
 
 UserItem.propTypes = {
   user: PropTypes.object.isRequired,
-}
+};
 
 export default UserItem

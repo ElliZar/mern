@@ -1,4 +1,6 @@
-import React, {Fragment} from 'react'
+import React, {Fragment} from 'react';
+import {Route} from "react-router-dom";
+
 
 const About = () => {
   return (
